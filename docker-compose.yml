@@ -1,0 +1,8 @@
+version: '2'
+services:
+  srv-rt-cfg:
+    restart: always
+    build: .
+    environment:
+      ETCDSERVERS: "http://127.0.0.1:2379"
+    network_mode: "host"
