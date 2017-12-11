@@ -4,5 +4,11 @@ services:
     restart: always
     build: .
     environment:
+      K8S_CLUSTER_NAME: "mycluster"  
+      K8S_CLUSTER_URL: "https://45.79.183.94:6443"
+      K8S_CLUSTER_NAME: "servicediscovery"
+      K8S_CLUSTER_PASSWORD: "servicediscovery"    
       ETCDSERVERS: "http://127.0.0.1:2379"
     network_mode: "host"
+    volumes:
+      - /path/to/the/ca.crt:/ca.crt    
