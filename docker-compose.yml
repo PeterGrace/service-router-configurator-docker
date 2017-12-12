@@ -6,8 +6,8 @@ services:
     environment:
       K8S_CLUSTER_NAME: "mycluster"  
       K8S_CLUSTER_URL: "https://yourclustermaster:6443"
-      K8S_CLUSTER_NAME: "servicediscovery"
-      K8S_CLUSTER_PASSWORD: "servicediscovery"    
+      K8S_CLUSTER_USER: "servicediscovery"
+      K8S_CLUSTER_TOKEN: "servicediscovery"    
       ETCDSERVERS: "http://127.0.0.1:2379"
     network_mode: "host"
     volumes:

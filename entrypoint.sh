@@ -7,7 +7,7 @@ kubectl config use-context default
 
 while true
 do
-    ETCDCTL_API=3 etcdctl --debug --endpoints "$ETCDSERVERS" watch /registry/services/specs \
+    ETCDCTL_API=3 etcdctl --endpoints "$ETCDSERVERS" watch "/registry/services/specs" --prefix=true >/dev/null \
         && echo "$(date): Kubernetes service updated" \
         && /usr/local/bin/service-router-configurator --etcd-host "$ETCDSERVERS" --etcd-path /service-router/haproxy-config apply
 done
